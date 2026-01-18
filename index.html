@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+   .quiz {
+    display: none;
+
+}
+
+  body {
+    background-color: #f4f7f8;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+}
+  #info, #subSel, .quiz, #marksheet {
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+h1 {
+      
+    font-size: 20px;                 
+    text-align: center;                
+    color: #2c3e50;                     
+    text-transform: uppercase;          
+    letter-spacing: 2px;                
+    margin: 40px 0 20px 0; 
+     font-weight: bold; 
+
+}
+ button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    
+}
+ button:hover {
+    background-color: #0056b3;
+}
+ .question {
+    margin-bottom: 20px;
+}
+ #marksheet h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+ #marksheet p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+ #remark {
+    font-weight: bold;
+    font-size: 18px;
+    color: #28a745;
+    text-align: center;
+}
+ #subSel {
+    display: none;
+}
+ 
+</style>
+
+</head>
+<body>
+    <!-- FORM -->
+     <div id="info">
+     <form  name="myForm" onsubmit=" return validateForm()">
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+
+    <label for="studentid">Student ID:</label>
+    <input type="text" id="studentid" name="studentid">
+
+    <label for="dep">Department:</label>
+    <input type="text" id="dep" name="dep">
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email">
+
+
+    <button type="submit" id="subDet">Submit Details</button>
+
+    
+     </form>
+     </div>
+     <div id="subSel" style="display:none;">
+        <label for="sub">Select subject:</label>
+    <select name="sub" id="sub">
+     <option value="">--Select--</option>
+     <option value="math">Math</option>
+     <option value="science">Science</option>
+     </select>
+
+     <button  type="button" id="qbtn">Start quiz</button>
+     </div>
+     
+     <!-- Math section -->
+<div id="mathQuiz" class="quiz">
+     <h1>ARE YOU SMARTER THAN A 4TH GRADER?</h1>
+<div class="question">
+<p>Q1. 2 + 3 = ?</p>
+<label><input type="radio" name="q1" value="a"> 5</label>
+<label><input type="radio" name="q1" value="b"> 4</label>
+<label><input type="radio" name="q1" value="c"> 3</label>
+<label><input type="radio" name="q1" value="d"> 1</label>
+</div>
+
+<div class="question">
+<p>Q2. 10 - 5 = ?</p>
+<label><input type="radio" name="q2" value="a"> 5</label>
+<label><input type="radio" name="q2" value="b"> 4</label>
+<label><input type="radio" name="q2" value="c"> 8</label>
+<label><input type="radio" name="q2" value="d"> 9</label>
+</div>
+
+<div class="question">
+<p>Q3. 4 × 2 = ?</p>
+<label><input type="radio" name="q3" value="a"> 8</label>
+<label><input type="radio" name="q3" value="b"> 4</label>
+<label><input type="radio" name="q3" value="c"> 5</label>
+<label><input type="radio" name="q3" value="d"> 9</label>
+</div>
+
+<div class="question">
+<p>Q4. 20 ÷ 4 = ?</p>
+<label><input type="radio" name="q4" value="a"> 5</label>
+<label><input type="radio" name="q4" value="b"> 6</label>
+<label><input type="radio" name="q4" value="c"> 7</label>
+<label><input type="radio" name="q4" value="d">8</label>
+</div>
+
+<div class="question">
+<p>Q5. 6 + 7 = ?</p>
+<label><input type="radio" name="q5" value="a"> 13</label>
+<label><input type="radio" name="q5" value="b"> 2</label>
+<label><input type="radio" name="q5" value="c"> 15</label>
+<label><input type="radio" name="q5" value="d"> 19</label>
+</div>
+
+<div class="question">
+<p>Q6. 15 - 9 = ?</p>
+<label><input type="radio" name="q6" value="a"> 6</label>
+<label><input type="radio" name="q6" value="b"> 4</label>
+<label><input type="radio" name="q6" value="c"> 9</label>
+<label><input type="radio" name="q6" value="d"> 8</label>
+</div>
+
+<div class="question">
+<p>Q7. 3 × 5 = ?</p>
+<label><input type="radio" name="q7" value="a"> 15</label>
+<label><input type="radio" name="q7" value="b"> 14</label>
+<label><input type="radio" name="q7" value="c"> 11</label>
+<label><input type="radio" name="q7" value="d"> 20</label>
+</div>
+
+<div class="question">
+<p>Q8. 16 ÷ 2 = ?</p>
+<label><input type="radio" name="q8" value="a"> 8</label>
+<label><input type="radio" name="q8" value="b"> 7</label>
+<label><input type="radio" name="q8" value="c"> 6</label>
+<label><input type="radio" name="q8" value="d"> 5</label>
+</div>
+
+<div class="question">
+<p>Q9. 9 + 8 = ?</p>
+<label><input type="radio" name="q9" value="a"> 17</label>
+<label><input type="radio" name="q9" value="b"> 14</label>
+<label><input type="radio" name="q9" value="c"> 15</label>
+<label><input type="radio" name="q9" value="d"> 19</label>
+</div>
+
+<div class="question">
+<p>Q10. 12 - 7 = ?</p>
+<label><input type="radio" name="q10" value="a"> 5</label>
+<label><input type="radio" name="q10" value="b"> 3</label>
+<label><input type="radio" name="q10" value="c"> 2</label>
+<label><input type="radio" name="q10" value="d"> 1</label>
+</div>
+
+<br><br>
+<button id="mathbtn" type="button">Submit Quiz</button>
+
+</div>
+
+ <!-- Science section -->
+<div id="sciQuiz" class="quiz">
+    <h1>ARE YOU SMARTER THAN A 4TH GRADER?</h1>
+
+    <div class="question">
+        <p>Q1. What gas do plants use for photosynthesis?</p>
+        <input type="radio" name="sq1" value="c"> Oxygen<br>
+        <input type="radio" name="sq1" value="a"> Nitrogen<br>
+        <input type="radio" name="sq1" value="b"> Carbon Dioxide<br>
+        <input type="radio" name="sq1" value="d"> Hydrogen<br>
+    </div>
+
+    
+    <div class="question">
+        <p>Q2. What is the boiling point of water?</p>
+        <input type="radio" name="sq2" value="c"> 0°C<br>
+        <input type="radio" name="sq2" value="a"> 50°C<br>
+        <input type="radio" name="sq2" value="b"> 100°C<br>
+        <input type="radio" name="sq2" value="d"> 150°C<br>
+    </div>
+
+    
+    <div class="question">
+        <p>Q3. Which planet is known as the Red Planet?</p>
+        <input type="radio" name="sq3" value="b"> Earth<br>
+        <input type="radio" name="sq3" value="a"> Mars<br>
+        <input type="radio" name="sq3" value="c"> Venus<br>
+        <input type="radio" name="sq3" value="d"> Jupiter<br>
+    </div>
+
+    
+    <div class="question">
+        <p>Q4. What organ pumps blood in the human body?</p>
+        <input type="radio" name="sq4" value="a"> Brain<br>
+        <input type="radio" name="sq4" value="b"> Lungs<br>
+        <input type="radio" name="sq4" value="c"> Heart<br>
+        <input type="radio" name="sq4" value="d"> Kidney<br>
+    </div>
+
+    
+    <div class="question">
+        <p>Q5. Which part of the plant makes food?</p>
+        <input type="radio" name="sq5" value="a"> Root<br>
+        <input type="radio" name="sq5" value="b"> Stem<br>
+        <input type="radio" name="sq5" value="c"> Leaf<br>
+        <input type="radio" name="sq5" value="d"> Flower<br>
+    </div>
+
+    
+    <div class="question">
+        <p>Q6. What force pulls objects toward the Earth?</p>
+        <input type="radio" name="sq6" value="a"> Magnetism<br>
+        <input type="radio" name="sq6" value="b"> Friction<br>
+        <input type="radio" name="sq6" value="c"> Gravity<br>
+        <input type="radio" name="sq6" value="d"> Pressure<br>
+    </div>
+
+    
+    <div class="question">
+        <p>Q7. Which vitamin is produced in the human body by sunlight?</p>
+        <input type="radio" name="sq7" value="a"> Vitamin A<br>
+        <input type="radio" name="sq7" value="b"> Vitamin B<br>
+        <input type="radio" name="sq7" value="c"> Vitamin C<br>
+        <input type="radio" name="sq7" value="d"> Vitamin D<br>
+    </div>
+
+    
+    <div class="question">
+        <p>Q8. What is the main source of energy for Earth?</p>
+        <input type="radio" name="sq8" value="a"> Moon<br>
+        <input type="radio" name="sq8" value="b"> Stars<br>
+        <input type="radio" name="sq8" value="c"> Sun<br>
+        <input type="radio" name="sq8" value="d"> Wind<br>
+    </div>
+
+    
+    <div class="question">
+        <p>Q9. Which gas is most abundant in the Earth’s atmosphere?</p>
+        <input type="radio" name="sq9" value="a"> Oxygen<br>
+        <input type="radio" name="sq9" value="b"> Carbon Dioxide<br>
+        <input type="radio" name="sq9" value="c"> Nitrogen<br>
+        <input type="radio" name="sq9" value="d"> Hydrogen<br>
+    </div>
+
+    
+    <div class="question">
+        <p>Q10. What state of matter is air?</p>
+        <input type="radio" name="sq10" value="a"> Solid<br>
+        <input type="radio" name="sq10" value="b"> Liquid<br>
+        <input type="radio" name="sq10" value="c"> Gas<br>
+        <input type="radio" name="sq10" value="d"> Plasma<br>
+    </div>
+    <br><br>
+   <button id="scibtn" type="button">Submit Quiz</button>
+    </div>
+
+   
+
+
+
+ <!-- Marksheet -->
+
+<div id="marksheet" style="display:none; border:1px solid black; padding:10px; width:300px;">
+    <h2>Marksheet</h2>
+    <p id="studentName"></p>
+    <p id="studentID"></p>
+    <p id="subject"></p>
+    <p id="score"></p>
+    <p id="remark"></p>
+</div>
+
+
+
+
+<script>
+    // form validation
+  function validateForm(){
+    let name= document.getElementById("name").value;
+    let iD=document.getElementById("studentid").value;
+    let dep=document.getElementById("dep").value;
+    let email=document.getElementById("email").value;
+
+
+    if (name === "" || dep === "" || email === "") {
+    alert("All fields are required");
+    return false;
+}
+
+     
+    let regex=/^cs\d{6}$/i;
+
+    if (regex.test(iD)) {
+
+         document.getElementById("subSel").style.display = "block";
+        return false;
+    } else {
+        alert("Invalid ID. Format should be cs123456");
+        return false;
+    }
+
+    
+}
+
+
+  
+
+//  function called when any subject is selected 
+  document.getElementById("qbtn").onclick = function () {
+    let subject = document.getElementById("sub").value;
+
+    
+    document.getElementById("mathQuiz").style.display = "none";
+    document.getElementById("sciQuiz").style.display = "none";
+
+    if (subject === "math") {
+        document.getElementById("mathQuiz").style.display = "block";
+        document.getElementById("info").style.display = "none";
+        document.getElementById("subSel").style.display = "none";
+    } 
+    else if (subject === "science") {
+        document.getElementById("sciQuiz").style.display = "block";
+        document.getElementById("info").style.display = "none";
+        document.getElementById("subSel").style.display = "none";
+    } 
+    else {
+        alert("Please select a subject");
+    }
+};
+
+
+function getRemark(score) {
+    if(score >= 9) return "Excellent!";
+    else if(score >= 7) return "Good!";
+    else if(score >= 5) return "Average!";
+    else return "Needs Improvement!";
+}
+
+
+//    for checking math
+
+   document.getElementById("mathbtn").onclick = function checkMath() {
+    var score = 0;
+
+    // Q1
+    if(document.getElementsByName("q1")[0].checked) score++;
+
+    // Q2
+    if(document.getElementsByName("q2")[0].checked) score++;
+
+    // Q3
+    if(document.getElementsByName("q3")[0].checked) score++;
+
+    // Q4
+    if(document.getElementsByName("q4")[0].checked) score++;
+
+    // Q5
+    if(document.getElementsByName("q5")[0].checked) score++;
+
+    // Q6
+    if(document.getElementsByName("q6")[0].checked) score++;
+
+    // Q7
+    if(document.getElementsByName("q7")[0].checked) score++;
+
+    // Q8
+    if(document.getElementsByName("q8")[0].checked) score++;
+
+    // Q9
+    if(document.getElementsByName("q9")[0].checked) score++;
+
+    // Q10
+    if(document.getElementsByName("q10")[0].checked) score++;
+
+   
+document.getElementById("mathQuiz").style.display = "none";
+
+   
+    document.getElementById("marksheet").style.display = "block";
+
+    
+    document.getElementById("studentName").innerHTML = "Name: " + document.getElementById("name").value;
+    document.getElementById("studentID").innerHTML = "ID: " + document.getElementById("studentid").value;
+    document.getElementById("subject").innerHTML = "Subject: Math";
+    document.getElementById("score").innerHTML = "Score: " + score + " / 10";
+
+    document.getElementById("remark").innerHTML = "Remark: " + getRemark(score);
+
+   }
+
+
+    // for checking science
+    document.getElementById("scibtn").onclick=function checkScience() {
+    
+    var score = 0;
+
+    // Q1
+    if(document.getElementsByName("sq1")[2].checked) score++;
+
+    // Q2
+    if(document.getElementsByName("sq2")[2].checked) score++;
+
+    // Q3
+    if(document.getElementsByName("sq3")[1].checked) score++;
+
+    // Q4
+    if(document.getElementsByName("sq4")[2].checked) score++;
+
+    // Q5
+    if(document.getElementsByName("sq5")[2].checked) score++;
+
+    // Q6
+    if(document.getElementsByName("sq6")[2].checked) score++;
+
+    // Q7
+    if(document.getElementsByName("sq7")[3].checked) score++;
+
+    // Q8
+    if(document.getElementsByName("sq8")[2].checked) score++;
+
+    // Q9
+    if(document.getElementsByName("sq9")[2].checked) score++;
+
+    // Q10
+    if(document.getElementsByName("sq10")[2].checked) score++;
+
+
+    document.getElementById("sciQuiz").style.display = "none";
+     
+ 
+    document.getElementById("marksheet").style.display = "block";
+
+    
+    document.getElementById("studentName").innerHTML = "Name: " + document.getElementById("name").value;
+    document.getElementById("studentID").innerHTML = "ID: " + document.getElementById("studentid").value;
+    document.getElementById("subject").innerHTML = "Subject: Science";
+    document.getElementById("score").innerHTML = "Score: " + score + " / 10";
+
+    document.getElementById("remark").innerHTML = "Remark: " + getRemark(score);
+
+
+
+    }
+
+</script>
+ 
+</body>
